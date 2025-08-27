@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+.page-gestion {
+    display: flex;
+    height: 100vh;
+    overflow: auto;
+    padding: 0px 30px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page-gestion h2 {
+    height: 70px;
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 0.5em;
+    justify-content: center;
+    color: var(--primary-color);
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top left, var(--orange-profond), var(--jaune-doux));
+}
+
+.page-gestion #select-div{
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    border: var(--solid-black);
+}
+
+.page-gestion #select-div h3{
+    color: black;
+    text-decoration: underline;
+}
+
+.page-gestion #select-div #service{
+    width: 170px;
+    margin-left: 5px;
+    height: 40px;
+    outline: none;
+    color: black;
+    border-radius: 0.5em;
+}
+
+.page-gestion #select-div #service option{
+    color: black;
+    cursor: pointer;
+}
+
+.page-gestion #table-contrats{
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    max-height: 90vh;
+    margin: 20px auto;
+    /* border: var(--solid-black); */
+    backdrop-filter: blur(10px);
+    justify-content: flex-start;
+}
+
+.page-gestion #table-contrats .contrat{
+    margin: 5px;
+    padding: 3px;
+    height: 120px;
+    display: flex;
+    cursor: pointer;
+    /* overflow: hidden; */
+    min-width: 120px;
+    align-items: center;
+    width: calc(100%/8);
+    border-radius: 10px;
+    transition: 0.5s ease;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(to top left, var(--orange-profond), var(--jaune-doux));
+}
+
+.page-gestion .contrat:hover {
+    z-index: 1;
+    transform: scale(1.05);
+    border: 1px solid var(--primary-color);
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-gestion .contrat #entête-contrat{
+    height: 22%;
+    width: 100%;
+    display: flex;
+    min-height: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-gestion .contrat #entête-contrat #matricule{
+    width: 100%;
+    display: flex;
+    padding: 3px;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    overflow: hidden;
+    font-weight: bold;
+    white-space: nowrap;
+    border-radius: 0.5em;
+    text-overflow: ellipsis;
+    background-color: white;
+}
+
+.page-gestion .contrat #entête-contrat ion-icon,
+.page-gestion .contrat #entête-contrat #matricule{
+    color: var(--primary-color);
+}
+
+.page-gestion .contrat #nom_premon{
+    width: 100%;
+    line-clamp: 2;
+    color: black;
+    font-size: 14px;
+    overflow: hidden;
+    font-weight: bold;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;        /* nombre de lignes */
+    text-overflow: ellipsis;
+    /* border: var(--solid-red); */
+    -webkit-box-orient: vertical;
+}
+
+.page-gestion .contrat #poste,
+.page-gestion .contrat #type_contrat{
+    width: 100%;
+    font-size: 12px;
+    overflow: hidden;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* border: var(--solid-blue); */
+    color: var(--primary-color);
+}

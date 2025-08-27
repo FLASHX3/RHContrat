@@ -1,0 +1,234 @@
+@charset "utf-8";
+
+.page-enregistrer form {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    padding: 0 1.5rem 1rem;
+    border-radius: 0.35rem;
+    backdrop-filter: blur(10px);
+    width: clamp(400px, 30%, 380px);
+    border: 1px solid var(--primary-color);
+    border-top: 7px solid var(--primary-color);
+    box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to top left, var(--orange-profond), var(--jaune-doux));
+}
+
+.page-enregistrer form::after {
+    top: 0;
+    left: 0;
+    width: 50%;
+    content: "";
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    transform: skewX(-25deg);
+    transform-origin: bottom left;
+    background-color: rgba(2466, 222, 155, 0.18);
+}
+
+.page-enregistrer form h2 {
+    margin: 0.75rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.page-enregistrer form span.message {
+    display: block;
+    font-size: 12px;
+    color: red;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.page-enregistrer .progressbar {
+    display: flex;
+    position: relative;
+    counter-reset: step;
+    justify-content: space-between;
+}
+
+.page-enregistrer .progressbar::before,
+.page-enregistrer .progress {
+    top: 50%;
+    height: 4px;
+    width: 100%;
+    content: "";
+    position: absolute;
+    background-color: white;
+    transform: translateY(-50%);
+}
+
+.page-enregistrer .progress {
+    width: 0%;
+    transition: 0.3s;
+    background-color: var(--primary-color);
+}
+
+.page-enregistrer .progress-step {
+    z-index: 1;
+    display: flex;
+    transition: 0.5;
+    width: 2.1875rem;
+    height: 2.1875rem;
+    font-weight: bold;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.page-enregistrer .progress-step::before {
+    color: white;
+    content: counter(step);
+    counter-increment: step;
+}
+
+.page-enregistrer .progress-step::after {
+    color: white;
+    font-size: 0.85rem;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    content: attr(data-title);
+}
+
+.page-enregistrer .progress-step-active {
+    color: white;
+    background-color: var(--primary-color);
+}
+
+.page-enregistrer [data-title].progress-step-active.progress-step::after {
+    color: var(--primary-color);
+}
+
+.page-enregistrer form #wrapper-list {
+    height: 80%;
+    width: 1128px;
+    display: flex;
+    flex-direction: row;
+    transition: 0.5s ease;
+    transform-origin: left;
+    justify-content: flex-start;
+}
+
+.page-enregistrer form #wrapper-list .wrapper {
+    margin-right: 1.5rem;
+    width: calc(100% / 3);
+}
+
+.page-enregistrer form #wrapper-list .wrapper label {
+    display: block;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.page-enregistrer form #wrapper-list .wrapper .obligatoire {
+    color: red;
+}
+
+.page-enregistrer form #wrapper-list .wrapper input,
+.page-enregistrer form #wrapper-list .wrapper select {
+    width: 100%;
+    color: black;
+    outline: none;
+    display: block;
+    font-size: 17px;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+}
+
+.page-enregistrer form #wrapper-list .wrapper select option {
+    width: 100%;
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+.page-enregistrer form #wrapper-list .wrapper .input-group {
+    margin: 2rem 0;
+}
+
+.erreur {
+    color: red;
+    height: 12px;
+    display: block;
+    font-size: 12px;
+}
+
+.page-enregistrer .btns-group {
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.page-enregistrer .btn {
+    display: flex;
+    cursor: pointer;
+    color: #f3f3f3;
+    padding: 0.75rem;
+    transition: 0.3s;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 0.25rem;
+    justify-content: center;
+    background-color: var(--primary-color);
+}
+
+.page-enregistrer .btn:hover {
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.page-enregistrer .width-50 {
+    width: 50%;
+}
+
+.page-enregistrer .ml-auto {
+    margin-left: auto;
+}
+
+.page-enregistrer #btn-action{
+    color: white;
+}
+
+.boite {
+    top: 40%;
+    left: 50%;
+    z-index: 100;
+    width: 250px;
+    padding: 20px;
+    display: none;
+    position: fixed;
+    text-align: center;
+    border: 1px solid #ccc;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to top left, var(--orange-profond), var(--jaune-doux));
+}
+
+.boite p{
+    color: black;
+}
+
+.boite button {
+    margin: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 0.5em;
+    background-color: var(--primary-color);
+}
+
+#overlay {
+    top: 0;
+    left: 0;
+    z-index: 89;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+}
